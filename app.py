@@ -16,7 +16,7 @@ def create_payment_pix():
 
     if 'value' not in data:
         return jsonify({"message": "Invalid value"}), 404
-    
+
     expiration_date = datetime.now() + timedelta(minutes=30)
     new_payment = Payment(value=data['value'], expiration_date=expiration_date)
 
